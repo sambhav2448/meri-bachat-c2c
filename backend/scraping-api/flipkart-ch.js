@@ -1,5 +1,6 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
+// _2418kt
 module.exports = getData = async (url) => {
   const response = await axios.get(
     url
@@ -26,6 +27,15 @@ module.exports = getData = async (url) => {
   }
   const prod_img = $('._396cs4').attr('src');
 
+  // const prod_desc = $('._2418kt>ul').each((i, el) => {
+  //   let data = [];
+  //   data.push($(el).text());
+  // });
+  const desc1 = $('._2418kt>ul').html();
+  const arr = desc1.split('</li>').join('');
+  const data_arr = arr.split('<li class="_21Ahn-">');
+  data_arr.shift();
+
   return {
     website: 'Flipkart',
     pdk_name,
@@ -34,9 +44,19 @@ module.exports = getData = async (url) => {
     org_price,
     prod_img,
     prod_link: url,
+    desc: data_arr,
   };
 
-  // console.log({ pdk_name, fpk_price, prod_rating, org_price, prod_img });
+  // console.log({
+  //   website: 'Flipkart',
+  //   pdk_name,
+  //   fpk_price,
+  //   prod_rating,
+  //   org_price,
+  //   prod_img,
+  //   // prod_link: url,
+  //   desc: data_arr,
+  // });
 };
 
 // getData();
