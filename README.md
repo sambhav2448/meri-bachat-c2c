@@ -1,7 +1,7 @@
 # meri-bachat-c2c
 ## MERN stack project for comapring prices in real time along with notification updates!
 
-### Backend API
+### Backend API Documentation -
 ##### {URL}/compare
 ####  POST request ; sample input =>{ "search":"blue jbl headphones "}
 #### ----------------
