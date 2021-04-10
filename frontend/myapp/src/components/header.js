@@ -51,7 +51,7 @@ const Header = () => {
           {/* <IconButton edge='start' color='inherit' aria-label='home'>
             <Home fontSize='large' />
           </IconButton> */}
-          <h3>CompanyNname</h3>
+          <h2>Amazing Bachat</h2>
           <List
             component='nav'
             aria-labelledby='main navigation'

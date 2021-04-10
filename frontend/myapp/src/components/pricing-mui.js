@@ -39,8 +39,14 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
+  whitetext: {
+    color: '#e6e6e6',
+  },
   toolbar: {
     flexWrap: 'wrap',
+  },
+  orangebg: {
+    background: '#ef6848',
   },
   toolbarTitle: {
     flexGrow: 1,
@@ -77,8 +83,8 @@ const useStyles = makeStyles((theme) => ({
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: 'Flipkart',
+    price: '800',
     description: [
       '10 users included',
       '2 GB of storage',
@@ -89,9 +95,9 @@ const tiers = [
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro',
+    title: 'Paytm Mall',
     subheader: 'Most popular',
-    price: '15',
+    price: '600',
     description: [
       '20 users included',
       '10 GB of storage',
@@ -102,8 +108,8 @@ const tiers = [
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: 'Reliance Digital',
+    price: '700',
     description: [
       '50 users included',
       '30 GB of storage',
@@ -116,27 +122,16 @@ const tiers = [
 ];
 const footers = [
   {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
+    title: 'Amazing Bachat',
+    description: ['Contact', 'History', 'Contact us', 'Locations'],
   },
   {
     title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
-    ],
+    description: ['amzing', 'feature', 'Team feature', 'Developer', 'Contact'],
   },
   {
     title: 'Resources',
-    description: [
-      'Resource',
-      'Resource name',
-      'Another resource',
-      'Final resource',
-    ],
+    description: ['Contact', 'Resource name', 'Contact', 'Contact'],
   },
   {
     title: 'Legal',
@@ -150,77 +145,28 @@ export default function Pricing() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar
-        position='static'
-        color='default'
-        elevation={0}
-        className={classes.appBar}
-      >
-        <Toolbar className={classes.toolbar}>
-          <Typography
-            variant='h6'
-            color='inherit'
-            noWrap
-            className={classes.toolbarTitle}
-          >
-            Company name
-          </Typography>
-          <nav>
-            <Link
-              variant='button'
-              color='textPrimary'
-              href='#'
-              className={classes.link}
-            >
-              Features
-            </Link>
-            <Link
-              variant='button'
-              color='textPrimary'
-              href='#'
-              className={classes.link}
-            >
-              Enterprise
-            </Link>
-            <Link
-              variant='button'
-              color='textPrimary'
-              href='#'
-              className={classes.link}
-            >
-              Support
-            </Link>
-          </nav>
-          <Button
-            href='#'
-            color='primary'
-            variant='outlined'
-            className={classes.link}
-          >
-            Login
-          </Button>
-        </Toolbar>
-      </AppBar>
+
       {/* Hero unit */}
       <Container maxWidth='sm' component='main' className={classes.heroContent}>
         <Typography
           component='h1'
           variant='h2'
           align='center'
-          color='textPrimary'
+          className={classes.whitetext}
+          //   color='textSecondary'
           gutterBottom
         >
-          Pricing
+          Proudct Comparison
         </Typography>
         <Typography
           variant='h5'
           align='center'
           color='textSecondary'
           component='p'
+          className={classes.whitetext}
         >
-          Quickly build an effective pricing table for your potential customers
-          with this layout. It&apos;s built with default Material-UI components
-          with little customization.
+          Select the best prices from our website with just one click and get
+          notified!
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -247,10 +193,7 @@ export default function Pricing() {
                 <CardContent>
                   <div className={classes.cardPricing}>
                     <Typography component='h2' variant='h3' color='textPrimary'>
-                      ${tier.price}
-                    </Typography>
-                    <Typography variant='h6' color='textSecondary'>
-                      /mo
+                      ₹{tier.price}
                     </Typography>
                   </div>
                   <ul>
@@ -270,9 +213,9 @@ export default function Pricing() {
                   <Button
                     fullWidth
                     variant={tier.buttonVariant}
-                    color='primary'
+                    className={classes.orangebg}
                   >
-                    {tier.buttonText}
+                    Buy now{' '}
                   </Button>
                 </CardActions>
               </Card>
@@ -285,13 +228,23 @@ export default function Pricing() {
         <Grid container spacing={4} justify='space-evenly'>
           {footers.map((footer) => (
             <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant='h6' color='textPrimary' gutterBottom>
+              <Typography
+                variant='h6'
+                // color='textPrimary'
+                className={classes.whitetext}
+                gutterBottom
+              >
                 {footer.title}
               </Typography>
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href='#' variant='subtitle1' color='textSecondary'>
+                    <Link
+                      href='#'
+                      variant='subtitle1'
+                      className={classes.whitetext}
+                      color='textSecondary'
+                    >
                       {item}
                     </Link>
                   </li>
@@ -301,7 +254,7 @@ export default function Pricing() {
           ))}
         </Grid>
         <Box mt={5}>
-          <Copyright />
+          <Copyright className={classes.whitetext} />
         </Box>
       </Container>
       {/* End footer */}
