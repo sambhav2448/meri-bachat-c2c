@@ -8,7 +8,7 @@ import {
   ListItemText,
   Container,
 } from '@material-ui/core';
-// import { Home } from '@material-ui/icons';
+import { Home } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -19,11 +19,15 @@ const useStyles = makeStyles({
   navDisplayFlex: {
     display: `flex`,
     justifyContent: `space-between`,
+    color: '#161f28',
+  },
+  heading_text: {
+    color: '#161f28',
   },
   linkText: {
     textDecoration: `none`,
     textTransform: `uppercase`,
-    color: `white`,
+    color: '#161f28',
   },
   AppBar: {
     //height:400,
@@ -51,7 +55,7 @@ const Header = () => {
           {/* <IconButton edge='start' color='inherit' aria-label='home'>
             <Home fontSize='large' />
           </IconButton> */}
-          <h2>Amazing Bachat</h2>
+          <h2 className={classes.heading_text}>Amazing Bachat</h2>
           <List
             component='nav'
             aria-labelledby='main navigation'

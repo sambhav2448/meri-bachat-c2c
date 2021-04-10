@@ -96,7 +96,7 @@ const tiers = [
   },
   {
     title: 'Paytm Mall',
-    subheader: 'Most popular',
+    subheader: 'Cheapest',
     price: '600',
     description: [
       '20 users included',
@@ -156,7 +156,7 @@ export default function Pricing() {
           //   color='textSecondary'
           gutterBottom
         >
-          Proudct Comparison
+          Sony Headphones
         </Typography>
         <Typography
           variant='h5'
